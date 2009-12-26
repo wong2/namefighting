@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+android:id="@+id/widget0"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android"
+>
+<Button
+android:id="@+id/Button_begin"
+android:layout_width="100px"
+android:layout_height="wrap_content"
+android:text="Start Fighting"
+android:layout_x="107px"
+android:layout_y="87px"
+>
+</Button>
+<Button
+android:id="@+id/Button_quit"
+android:layout_width="100px"
+android:layout_height="wrap_content"
+android:text="Quit"
+android:layout_x="108px"
+android:layout_y="193px"
+>
+</Button>
+<Button
+android:id="@+id/Button_help"
+android:layout_width="100px"
+android:layout_height="wrap_content"
+android:text="Help"
+android:layout_x="107px"
+android:layout_y="294px"
+>
+</Button>
+</AbsoluteLayout>
