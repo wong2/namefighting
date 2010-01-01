@@ -25,23 +25,26 @@ public class Fighting	extends Activity
         mEditText01 = (EditText)findViewById(R.id.EditText01);
         mEditText02 = (EditText)findViewById(R.id.EditText02);
         
-        name1 = mEditText01.getText().toString();
-        name2 = mEditText02.getText().toString();
+        
         
         button_start = (Button)findViewById(R.id.Button01);
         button_start.setOnClickListener(new OnClickListener()
         {
+        	
 			@Override
 			public void onClick(View v) 
 			{
+				name1 = mEditText01.getText().toString();
+		        name2 = mEditText02.getText().toString();
+				
 				Intent intent1 = new Intent();
-				intent1.setClass(Fighting.this,Screen.class);
+				intent1.setClass(Fighting.this,Test.class);
 				
 				Bundle bundle = new Bundle();
 				bundle.putString("name1", name1);
 				bundle.putString("name2", name2);
 				
-				intent1.putExtras(bundle);
+				intent1.putExtras(bundle);	
 				startActivity(intent1);
 			}
         });                                                                                                                                    
