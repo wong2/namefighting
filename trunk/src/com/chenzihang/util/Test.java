@@ -31,21 +31,9 @@ public class Test extends Activity
         name1MD5 = md5.getMD5ofStr(name1);
         name2MD5 = md5.getMD5ofStr(name2);
 
-        int i = 0;
-        while(name1Life <= 0|| name2Life <= 0&& i<5)
-        {
-        	if(name1MD5.charAt(0) > name2MD5.charAt(0))
-        	{
-        		text.setText(name1+"beat"+name2);
-        		name1Life -=5;
-        	}
-        	else
-        	{
-        		text.setText(name2+"beat"+name2);
-        		name2Life -=5;
-        	}
-        	i++;
-        }
+   //     int i = 0;
+ 
+        
         
  /*       text.setText("your name is " + name1MD5+name2MD5);	*/
         
