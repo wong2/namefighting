@@ -12,8 +12,9 @@
             </intent-filter>
         </activity>
          <activity android:name=".Fighting"></activity>
-        
          <activity android:name=".Screen" > </activity>
+        <activity android:name=".Test"></activity>
+         
        
 
     </application>
