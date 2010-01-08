@@ -1,9 +1,13 @@
 package com.chenzihang.util;
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.TextView;
 
 public class Test extends Activity
@@ -23,8 +27,7 @@ public class Test extends Activity
 	Bundle bundle;
 	TextView[] text = new TextView[10];
 	MD5 md5;
-	Random random1, random2;
-	
+	Random random1, random2;	
 	
 	public void onCreate(Bundle  savedInstanceState)
 	{
@@ -95,7 +98,7 @@ public class Test extends Activity
         		text[i].setText(name2 + kongfu[n] + "," + name1 + " ‹…À¡À");
         		name1Life -= 20;
         	}
-        	i++;
+        	i++;        	
         }
         if(name1Life <= 0)
         {
@@ -104,8 +107,27 @@ public class Test extends Activity
         else
         {
         	text[i].setText(name2 +" was failed");
-        }
-      
+        }    
+        delayy(0);
 	}
-
+	
+	public void delayy(final int j)
+	{
+		if(j==10)
+			return;
+		text[j].setVisibility(0);
+        // SLEEP 2 SECONDS HERE ...
+        final Handler handler = new Handler(); 
+        Timer t = new Timer(); 
+        t.schedule(new TimerTask() { 
+                public void run() { 
+                        handler.post(new Runnable() { 
+                                public void run() {
+                                	delayy(j+1);
+                                } 
+                        }); 
+                } 
+        }, 2000); 
+		
+	}
 }
