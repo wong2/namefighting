@@ -8,7 +8,12 @@ import java.util.TimerTask;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.view.Window;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewSwitcher.ViewFactory;
 
 public class Test extends Activity
 {
@@ -26,6 +31,10 @@ public class Test extends Activity
 	
 	Bundle bundle;
 	TextView[] text = new TextView[10];
+	ImageView[] bloodbar = new ImageView[10];
+	int[] type =new int[10];
+	int num1 = 0 , num2 = 5;
+	int iii = 0;
 	MD5 md5;
 	Random random1, random2;	
 	
@@ -56,6 +65,17 @@ public class Test extends Activity
         text[7] = (TextView)findViewById(R.id.TextView7);
         text[8] = (TextView)findViewById(R.id.TextView8);
         text[9] = (TextView)findViewById(R.id.TextView9);
+        
+        bloodbar[0] = (ImageView)findViewById(R.id.blood1);
+        bloodbar[1] = (ImageView)findViewById(R.id.blood2);
+        bloodbar[2] = (ImageView)findViewById(R.id.blood3);
+        bloodbar[3] = (ImageView)findViewById(R.id.blood4);
+        bloodbar[4] = (ImageView)findViewById(R.id.blood5);
+        bloodbar[5] = (ImageView)findViewById(R.id.blood6);
+        bloodbar[6] = (ImageView)findViewById(R.id.blood7);
+        bloodbar[7] = (ImageView)findViewById(R.id.blood8);
+        bloodbar[8] = (ImageView)findViewById(R.id.blood9);
+        bloodbar[9] = (ImageView)findViewById(R.id.blood10);
         
         md5 = new MD5();
        
@@ -89,7 +109,8 @@ public class Test extends Activity
         		random1 = new Random();
         		int m = random1.nextInt(10);
         		text[i].setText(name1 + kongfu[m] + ", " + name2 +"受伤了");
-        		name2Life -= 20;
+        		name2Life -= 20; 
+        		type[i] = 1;
         	}
         	else
         	{
@@ -97,6 +118,7 @@ public class Test extends Activity
         		int n = random2.nextInt(10);
         		text[i].setText(name2 + kongfu[n] + "," + name1 + "受伤了");
         		name1Life -= 20;
+        		type[i] = 0;
         	}
         	i++;        	
         }
@@ -107,15 +129,41 @@ public class Test extends Activity
         else
         {
         	text[i].setText(name2 +" was failed");
-        }    
-        delayy(0);
+        }   
+        
+        iii = i;
+        
+        final Handler handler = new Handler(); 
+        Timer t = new Timer(); 
+        t.schedule(new TimerTask() { 
+                public void run() { 
+                        handler.post(new Runnable() { 
+                                public void run() {
+                                	delayy(0, iii);
+                                } 
+                        }); 
+                } 
+        }, 2000);       
 	}
 	
-	public void delayy(final int j)
+	public void delayy(final int j, final int ii)
 	{
-		if(j==10)
+		if(j==ii)
+		{
+			text[j].setVisibility(0);
 			return;
-		text[j].setVisibility(0);
+		}
+		if(type[j] == 0)
+		{
+			bloodbar[num1].setVisibility(View.INVISIBLE);
+			num1++;
+		}	
+		else if(type[j] == 1)
+		{
+			bloodbar[num2].setVisibility(View.INVISIBLE);
+			num2++;
+		}
+		text[j].setVisibility(0);	
         // SLEEP 2 SECONDS HERE ...
         final Handler handler = new Handler(); 
         Timer t = new Timer(); 
@@ -123,7 +171,7 @@ public class Test extends Activity
                 public void run() { 
                         handler.post(new Runnable() { 
                                 public void run() {
-                                	delayy(j+1);
+                                	delayy(j+1, ii);
                                 } 
                         }); 
                 } 

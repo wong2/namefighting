@@ -3,9 +3,85 @@
 android:id="@+id/widget28"
 android:layout_width="fill_parent"
 android:layout_height="fill_parent"
-android:orientation="vertical"
 xmlns:android="http://schemas.android.com/apk/res/android"
->
+android:orientation="vertical">
+<ImageSwitcher
+android:id="@+id/ImageSwitcher01" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content">
+</ImageSwitcher>
+<ImageView
+android:id="@+id/blood1"
+android:src="@drawable/blood"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginLeft="10px" android:layout_marginTop="0px">
+</ImageView>
+<ImageView
+android:id="@+id/blood2"
+android:src="@drawable/blood"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="left" android:layout_marginLeft="10px" android:layout_marginTop="0px">
+</ImageView>
+<ImageView
+android:id="@+id/blood3"
+android:src="@drawable/blood"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginLeft="10px" android:layout_marginTop="0px">
+</ImageView>
+<ImageView
+android:id="@+id/blood4"
+android:src="@drawable/blood"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginLeft="10px" android:layout_marginTop="0px">
+</ImageView>
+<ImageView
+android:id="@+id/blood5"
+android:src="@drawable/blood"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="0px" android:layout_marginLeft="10px">
+</ImageView>
+<ImageView
+android:id="@+id/blood6"
+android:src="@drawable/blood"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginLeft="100px" android:layout_marginTop="-66px">
+</ImageView>
+<ImageView
+android:id="@+id/blood7"
+android:src="@drawable/blood"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginLeft="100px" android:layout_marginTop="0px">
+</ImageView>
+<ImageView
+android:id="@+id/blood8"
+android:src="@drawable/blood"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginLeft="100px" android:layout_marginTop="0px">
+</ImageView>
+<ImageView
+android:id="@+id/blood9"
+android:src="@drawable/blood"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginLeft="100px" android:layout_marginTop="0px">
+</ImageView>
+<ImageView
+android:id="@+id/blood10"
+android:src="@drawable/blood"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginLeft="100px" android:layout_marginTop="0px">
+</ImageView>
+
+
 <TextView
 android:id="@+id/TextView0"
 android:visibility="invisible"
@@ -66,5 +142,5 @@ android:visibility="invisible"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content">
 </TextView>
-</LinearLayout>
 
+</LinearLayout>
